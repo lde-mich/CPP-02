@@ -6,7 +6,7 @@
 #    By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 18:46:47 by lde-mich          #+#    #+#              #
-#    Updated: 2023/10/30 18:49:01 by lde-mich         ###   ########.fr        #
+#    Updated: 2023/12/22 11:52:35 by lde-mich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-NAME			= MyFirstClassinOrthodoxCanonicalForm
+NAME			= MyFirstClassInOrthodoxCanonicalForm
 
 %.o:%.cpp
 				$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
