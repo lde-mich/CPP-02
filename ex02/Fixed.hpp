@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:46:40 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/01/15 12:34:38 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:35:27 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ class Fixed
 		//Increment and decrement
 
 		//Pre
-		int& operator++();
-		int& operator--();
+		Fixed& operator++();
+		Fixed& operator--();
 		
 		//Post
-		int operator++(int);
-		int operator--(int);
+		Fixed operator++(int);
+		Fixed operator--(int);
 		
 		float toFloat(void) const;
 		int toInt(void) const;

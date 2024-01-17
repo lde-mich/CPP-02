@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:46:36 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/01/15 12:51:52 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:28:36 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,30 +142,30 @@ Fixed Fixed::operator / (Fixed const &fixed)
 //Increment and decrement
 
 //Pre
-int& Fixed::operator++()
+Fixed& Fixed::operator++()
 {
-    ++this->numberFixed;
-    return this->numberFixed;
+    ++(this->numberFixed);
+    return *this;
 }
 
-int& Fixed::operator--()
+Fixed& Fixed::operator--()
 {
-    --this->numberFixed;
-    return this->numberFixed;
+    --(this->numberFixed);
+    return *this;
 }
 
 //Post
-int Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
-    int temp = this->numberFixed;
-    ++this->numberFixed;
+    Fixed temp = (*this);
+    (this->numberFixed)++;
     return temp;
 }
 
-int Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
-    int temp = this->numberFixed;
-    --this->numberFixed;
+    Fixed temp = (*this);
+    (this->numberFixed)--;
     return temp;
 }
 
@@ -200,14 +200,6 @@ Fixed& Fixed::min (Fixed &a, Fixed &b)
 		return (b);
 }
 
-Fixed& Fixed::max (Fixed &a, Fixed &b)
-{
-	if (a.getRawBits() > b.getRawBits())
-		return (a);
-	else
-		return (b);
-}
-
 const Fixed& Fixed::min (Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() < b.getRawBits())
@@ -216,9 +208,17 @@ const Fixed& Fixed::min (Fixed const &a, Fixed const &b)
 		return (b);
 }
 
+Fixed& Fixed::max (Fixed &a, Fixed &b)
+{
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	else
+		return (b);
+}
+
 const Fixed& Fixed::max (Fixed const &a, Fixed const &b)
 {
-	if (a.getRawBits() < b.getRawBits())
+	if (a.getRawBits() > b.getRawBits())
 		return (a);
 	else
 		return (b);
