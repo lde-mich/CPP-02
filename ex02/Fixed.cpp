@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:46:36 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/01/17 17:28:36 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:56:04 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ Fixed Fixed::operator * (Fixed const &fixed)
     Fixed temp;
 	
 	temp.numberFixed = this->numberFixed * fixed.getRawBits();
+	temp.numberFixed = temp.numberFixed >> this->nBit;
 	
 	return (temp);
 }
